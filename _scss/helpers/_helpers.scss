@@ -1,0 +1,117 @@
+.list-inline {
+	
+	margin-left: 0;
+
+	li {
+
+		display: inline-block;
+
+	}// li
+
+	&.comma-sep {
+
+		li {
+
+			&:after {
+
+				content: ',';
+
+			}
+
+			&:last-of-type {
+
+				&:after {
+
+					display: none;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}// .list-inline
+
+.polaroid {
+
+	border-width: 2rem;
+	border-style: solid;
+	border-color: #FFF;
+	border-bottom-width: 6rem;
+
+}
+
+.vert-pad {
+
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+	@include media-breakpoint-up(lg) {
+
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+
+	}// @include media-breakpoint-up(lg)
+
+}// .vert-pad
+
+.m-0 {
+	margin: 0 !important;
+}
+.mt-0 {
+	margin-top: 0 !important;
+}
+.color-1 {
+	color: $color-1 !important;
+}
+.color-2 {
+	color: $color-2 !important;
+}
+.grey {
+	color: $grey-color !important;
+}
+.bg--white {
+	background-color: #FFF;
+}
+
+// slanted edges
+.edge--bottom {
+	@include media-breakpoint-up(sm) {
+  		@include angle(after);
+  		margin-bottom: 3%;
+  	}
+}
+.edge--bottom--reverse {
+	@include media-breakpoint-up(sm) {
+  		@include angle(after, true);
+  		margin-bottom: 3%;
+  	}
+}
+.edge--top {
+	@include media-breakpoint-up(sm) {
+  		@include angle(before);
+  		margin-top: 3%;
+  	}
+}
+.edge--top--reverse {
+	@include media-breakpoint-up(sm) {
+  		@include angle(before, true);
+  		margin-top: 3%;
+  	}
+}
+.edge--both {
+	@include media-breakpoint-up(sm) {
+  		@include angle(both);
+  		margin-top: 3%;
+  		margin-bottom: 3%;
+  	}
+}
+.edge--both--reverse {
+	@include media-breakpoint-up(sm) {
+  		@include angle(both, true);
+  		margin-top: 3%;
+  		margin-bottom: 3%; 
+  	} 
+}

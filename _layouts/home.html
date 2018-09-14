@@ -1,0 +1,96 @@
+---
+layout: default
+---
+
+<div class="home">
+
+	<section id="featured-project" class="featured container">
+		<div class="row">
+
+			{% for project in site.portfolio %}
+				{% if project.featured == 'main' %}
+					
+					<div class="vert-pad col-sm-12 col-md-4 hidden-xs-down">
+						<h2><a href="{{ project.url | relative_url }}" class="dark-link">{{ project.featured_title }}</a></h2>
+						<ul class="categories list-unstyled list-inline comma-sep">
+							{% for category in project.categories %} 
+								<li>{{ category }}</li>
+							{% endfor %}
+						</ul>
+						<a href="{{ project.url | relative_url }}" class="btn"><svg role="img" title="Long Right Arrow" width="113px" height="16px"><use xlink:href="{{ "/assets/img/icons/" | relative_url }}map.svg#long-right-arrow"/></svg>View Project</a>				
+					</div><!--// .col-sm-4 -->
+
+					<div class="offset large-offset animate fadeInRight col-sm-12 col-md-8">
+						<a href="{{ project.url | relative_url }}">
+							<img src="{{ project.featured_image | relative_url }}" />
+						</a>
+					</div><!--// .col-sm-8 -->
+
+				{% endif %}
+			{% endfor %}						
+
+		</div><!--// .row -->
+	</section><!--// #featured-project -->
+
+	<section id="more-projects" class="featured vert-pad container">
+		<div class="row">
+
+			{% for project in site.portfolio %}
+				{% if project.featured == 'grid' %}
+					
+					<div class="col-sm-12 col-md-6">
+						<div class="hidden-xs-down">
+							<h2><a href="{{ project.url | relative_url }}" class="dark-link">{{ project.featured_title }}</a></h2>
+							<ul class="categories list-unstyled list-inline comma-sep">
+								{% for category in project.categories %} 
+									<li>{{ category }}</li>
+								{% endfor %}
+							</ul>
+							<a href="{{ project.url | relative_url }}" class="btn"><svg role="img" title="CodePen" width="113px" height="16px"><use xlink:href="{{ "/assets/img/icons/" | relative_url }}map.svg#long-right-arrow"/></svg>View Project</a>
+						</div><!--// .hidden-xs-down -->	
+						<a href="{{ project.url | relative_url }}">		
+							<img src="{{ project.featured_image | relative_url }}" />
+						</a>
+					</div><!--// .col-sm-12.col-md-6 -->
+
+				{% endif %}
+			{% endfor %}						
+
+		</div><!--// .row -->
+	</section><!--// #more-projects -->
+
+	<section class="skills vert-pad container">
+		<div class="row">
+			
+			<div class="col-md-12 col-lg-6 text-xs-center text-lg-left">
+				<h2 class="grey-text">Design Skills</h2>
+				<ul class="list-inline list-unstyled">
+					{% for design in page.design_skills %} 
+						<li>
+							<a title="{{ design | escape }}" class="tooltip">
+								<img class="skill-icon static" src="{{ "/assets/img/icons/" | relative_url }}{{ design | slugify }}-grey-2x.png" />
+								<img class="skill-icon rollover" src="{{ "/assets/img/icons/" | relative_url }}{{ design | slugify }}-color-2x.png" />
+							</a>
+						</li>					
+					{% endfor %}									
+				</ul>
+			</div><!--// .col-sm-6 -->
+
+			<div class="col-md-12 col-lg-6 text-xs-center text-lg-left">
+				<h2 class="grey-text">Development Skills</h2>
+				<ul class="list-inline list-unstyled">
+ 					{% for develop in page.develop_skills %} 
+						<li>
+							<a title="{{ develop | escape }}" class="tooltip">
+								<img class="skill-icon static" src="{{ "/assets/img/icons/" | relative_url }}{{ develop | slugify }}-grey-2x.png" />
+								<img class="skill-icon rollover" src="{{ "/assets/img/icons/" | relative_url }}{{ develop | slugify }}-color-2x.png" />
+							</a>
+						</li>					
+					{% endfor %}	
+				</ul>
+			</div><!--// .col-sm-6 -->			
+
+		</div><!--// .row -->
+	</section><!--// .skills -->
+
+</div><!--// .home -->

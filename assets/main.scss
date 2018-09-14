@@ -1,0 +1,60 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@charset "utf-8";
+
+// Our variables
+$base-font-family:    "Hind", Helvetica, Arial, sans-serif;
+$base-font-size:      1.6rem;
+$base-font-weight:    400;
+$base-letter-spacing: 0.05rem;
+$small-font-size:     $base-font-size * 0.875;
+$base-line-height:    1.8rem;
+
+$color-1: #3cc47c; // Grass
+$color-2: #233237; // Deep Blue
+$color-3: #ecf0f1; // Porcelain
+$color-4: #ffffff; // White
+$color-5: #e94b35; // Cinnabar
+$color-6: #b52b4a; // Berry
+
+$grey-color:       #ecf0f1;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$text-color: $color-2;
+
+$header-height: 8rem;
+
+// import bootstrap
+@import "bootstrap";
+
+// import base
+@import "base/body";
+@import "base/typography";
+@import "base/icons";
+
+// import helpers
+@import "helpers/mixins";
+@import "helpers/helpers";
+@import "helpers/animations";
+
+// import components
+@import "components/tooltip";
+@import "components/form";
+@import "components/button";
+
+// import layouts
+@import "layout/header";
+@import "layout/page-intro";
+@import "layout/sidebar";
+@import "layout/main";
+@import "layout/footer";
+
+// import pages
+@import "pages/home";
+@import "pages/about";
+@import "pages/archive";
+@import "pages/project";
+@import "pages/contact";

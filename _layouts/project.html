@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<div class="project container">
+  <section class="row no-gutter portfolio">
+
+    <div id="sidebar" class="sticky-sidebar post-meta col-md-12 col-lg-4">
+      <div class="sidebar-inner">
+
+        {% if page.description %}
+        <h2>Brief</h2>
+        <p class="project-desciption">
+          {{ page.description }}
+        </p>
+        {% endif %}
+
+        <ul class="project-categories">
+          <h2>Categories</h2>
+          {% for category in page.categories %}
+            <li>{{ category }}</li>
+          {% endfor %}
+        </ul>
+
+      </div><!--// .sidebar-inner -->
+    </div><!--// #sidebar.post-meta -->
+
+    <div id="project-images" class="offset large-offset animate fadeInUp post-content col-md-12 col-lg-8">
+      {% for image in page.transparent_images %}
+        <div class="project-image">
+          <img src="{{ image | relative_url }}" />
+        </div><!--// .project-image -->
+      {% endfor %}      
+      {% for image in page.project_images %}
+        <div class="project-image box-shadow">
+          <img src="{{ image | relative_url }}" />
+        </div><!--// .project-image.box-shadow -->
+      {% endfor %}
+    </div><!--// #project-images.post-content -->
+
+  </section>
+
+  <section id="project-nav" class="row">
+    {% if page.collection %}
+      {% assign collection = site[page.collection] | sort: 'order' %}
+      {% assign prev = collection | last %}
+      {% assign next = collection | first %}
+
+      {% for item in collection %}
+        {% if item.title == page.title %}
+          {% unless forloop.first %}
+            {% assign prev = iterator %}
+          {% endunless %}
+
+          {% unless forloop.last %}
+            {% assign next = collection[forloop.index] %}
+          {% endunless %}
+        {% endif %}
+
+        {% assign iterator = item %}
+      {% endfor %}
+    {% endif %}
+
+    <div class="prev-project col-sm-4">
+      {% if prev %}
+        <a href="{{ prev.url | relative_url }}" class="btn prev mt-0"><svg role="img" title="Long Left Arrow" width="113px" height="16px"><use xlink:href="{{ "/assets/img/icons/" | relative_url }}map.svg#long-left-arrow"/></svg>{{ prev.title }}</a>      
+      {% endif %}
+    </div><!--// .prev-project -->
+
+    <div class="view-all col-sm-4">
+      <a href="/portfolio"><img src="{{ "/assets/img/icons/grid-icon.svg" | relative_url }}" height="32px" width="32px" /></a>
+    </div><!--// .view-portfolio -->
+
+    <div class="next-project col-sm-4">
+      {% if next %}
+        <a href="{{ next.url | relative_url }}" class="btn btn-right next mt-0"><svg role="img" title="Long Right Arrow" width="113px" height="16px"><use xlink:href="{{ "/assets/img/icons/" | relative_url }}map.svg#long-right-arrow"/></svg>{{ next.title }}</a> 
+      {% endif %}
+    </div><!--// .next-project -->      
+  </section><!--// .project-nav -->
+
+</div>

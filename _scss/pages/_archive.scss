@@ -1,0 +1,149 @@
+.archive {
+
+    position: relative;
+
+    @include media-breakpoint-down(xs) { 
+
+        padding: 0;
+
+    }
+
+    .controls {
+
+        @include media-breakpoint-up(sm) {
+            
+            position: absolute;
+            bottom: 100%;
+
+            button {
+
+                color: $grey-color;
+
+            }// button
+
+        }// @include media-breakpoint-up(sm)
+
+        button {
+
+            background: none;
+            border: none;
+            font-weight: 600;
+            letter-spacing: $base-letter-spacing;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            opacity: 0.5;
+
+            &:first-of-type {
+
+                padding-left: 0;
+
+            }
+
+            &.active {
+
+                opacity: 1;
+
+            }// .active
+
+        }// button
+
+    }// .controls
+
+    #grid-container .mix {
+
+        display: none;
+
+    }
+
+    .thumbnail {
+
+        position: relative;
+        overflow: hidden;
+
+        .image {
+
+            width: 100%;
+            height: 100%;    
+
+            img {
+
+                @include media-breakpoint-up(sm) {
+                    
+                    @include transform(scale(1.02));
+                    @include transition(all .5s ease);
+
+                }// @include media-breakpoint-up(xs) 
+
+            }// img
+        
+        }// .image
+
+        .overlay {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            @include transition(all .2s ease);
+            background-color: rgba(35,50,55,0.85);
+
+            @include media-breakpoint-down(xs) {
+
+                top: auto;
+                bottom: 0;
+                height: 25%;
+                @include transition(all 0.2s ease);
+                background-color: rgba(35,50,55,0.85);
+                opacity: 1;
+
+            }
+
+            .center-overlay {
+
+                h4 {
+
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                    color: $grey-color;
+
+                }// h4
+
+                svg {
+
+                    fill: $grey-color;
+
+                }// svg
+
+                text-align: center;
+                @include center;
+
+            }// .center-overlay
+
+        }// .overlay
+
+        &:hover {
+
+            .overlay {
+
+                opacity: 1;
+
+            }
+
+            .image {
+
+                img {
+
+                    @include transform(scale(1));
+                
+                }// img:hover
+
+            }
+
+        }
+
+    }// .thumbnail
+
+}// .archive

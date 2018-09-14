@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<section class="archive offset-sm-up container">
+	
+	<div class="controls hidden-xs-down">
+		<button class="filter" data-filter="all">All</button>
+		<button class="filter" data-filter=".web-design">Web Design</button>
+		<button class="filter" data-filter=".web-development">Web Development</button>
+		<button class="filter" data-filter=".identity">Identity</button>
+	</div><!--// .controls -->
+  
+	<div id="grid-container" class="row no-gutter">
+		{% assign portfolio = site.portfolio | sort: "order" %}
+		{% for project in portfolio %}
+			{% if project.hidden != true %}
+			<div class="mix{% for category in project.categories %} {{ category | slugify }}{% endfor %} thumbnail col-sm-6 col-md-4">
+				<a href="{{ project.url | relative_url }}" title="{{ project.title }}" alt="{{ project.title }}">
+					
+					<div class="image">
+						<img src="{{ project.thumb | relative_url }}" />
+					</div><!--// .image -->
+
+					<div class="overlay">
+						<div class="center-overlay">
+							<h4>{{ project.title }}</h4>
+							<svg role="img" title="Long Right Arrow" width="113px" height="16px"><use xlink:href="{{ "/assets/img/icons/" | relative_url }}map.svg#long-right-arrow"/></svg>
+						</div><!--// .center-overlay -->
+					</div><!--// .overlay -->
+
+				</a>			
+			</div><!--// .thumbnail -->
+			{% endif %}
+		{% endfor %}
+	</div><!--// .row.no-gutter -->
+</section><!--// .archive.container -->
+

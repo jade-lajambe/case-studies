@@ -1,0 +1,53 @@
+.page-intro {
+
+  position: relative;
+  height: 25rem;
+  background-color: $color-2;
+  background-size: cover;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include transition(height 0.2s ease-in-out);
+
+  .container {
+
+    position: relative;
+    height: 100%;
+
+    .title-center {
+
+      @include center(false, true);
+      padding-right: 30px;
+
+      h1 {
+
+        color: $grey-color;
+        font-weight: 700;
+
+      }// h1
+
+      h2 {
+
+        margin: 0;
+        color: $grey-color;
+        opacity: 0.5;
+
+      }
+
+      @include media-breakpoint-down(sm) {
+
+        margin-top: 3.5rem;
+
+      }
+
+    }// .title-center
+
+  }// .container
+
+  @include media-breakpoint-up(sm) {
+
+    height: 35rem;
+
+  }// @include media-breakpoint-up(sm)
+
+}// .page-intro

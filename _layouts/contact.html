@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="container">
+  <section class="row no-gutter contact">
+
+    <div id="sidebar" class="col-md-12 col-lg-6">
+      <div class="sidebar-inner">
+
+		<h2>I'm always happy to chat!</h2>
+		<p>Drop me a line and let me know what's going on in your world.<br/>Perhaps we can grab a coffee!</p>
+		<h2>Connect on LinkedIn</h2>
+		<p><a href="https://www.linkedin.com/in/evanlajambe" target="_blank" alt="Connect with me on LinkedIn" title="Connect with me on LinkedIn"><svg role="img" title="LinkedIn" width="20px" height="20px"><use xlink:href="{{ "/assets/img/icons/" | relative_url }}map.svg#linkedin"/></svg></a></p>
+
+      </div><!--// .sidebar-inner -->
+    </div><!--// #sidebar.post-meta -->
+
+    <div id="contact-form" class="offset large-offset animate fadeInUp post-content col-md-12 col-lg-6">
+    	<div class="box-shadow">
+			<form id="cf-form" class="floating-labels" action="https://formspree.io/eclajambe@gmail.com" method="POST">
+				<div class="input-row mt-0 icon">
+					<label class="cf-label" for="cf-name">Name</label>
+					<input class="user" type="text" name="name" id="cf-name" required>
+				</div> 			
+				<div class="input-row icon">
+					<label class="cf-label" for="cf-email">Email</label>
+					<input class="email" type="email" name="_replyto" id="cf-email" required>
+				</div>
+				<div class="input-row icon">
+					<label class="cf-label" for="cf-message">Message</label>
+					<textarea class="message" name="cf-message" id="cf-textarea" required></textarea>
+				</div>
+				<!--<div class="error-message submit-message">
+					<p>Please fill in all form fields!</p>
+				</div>-->
+				<div class="success-message submit-message">
+					<p>Thanks for stopping by - I'll be in touch!</p>
+				</div>
+				<fieldset class="submit-btn m-0">
+					<div>			
+						<input type="text" name="_gotcha" style="display:none" />
+						<input class="submit" type="submit" value="Send Message">
+				    </div>
+				</fieldset>		
+			</form>
+		</div><!--// .offset-shadow -->
+    </div><!--// #contact-form.post-content -->
+
+  </section>
+</div><!--// .container -->

@@ -1,0 +1,56 @@
+body {
+
+	.offset {
+
+		position: relative;
+		z-index: 1;
+
+		.box-shadow {
+
+    		box-shadow: 0 0 40px 10px rgba(0,0,0,0.05);
+
+		}// .box-shadow
+
+	}// .offset
+
+	.offset-md-up {
+
+		@include media-breakpoint-up(md) {
+
+			margin-top: -7rem;
+
+		}// @include media-breakpoint-up(md)
+
+	}
+
+	.offset-sm-up {
+
+		@include media-breakpoint-up(sm) {
+
+			margin-top: -7rem;
+
+		}// @include media-breakpoint-up(sm)
+
+	}
+
+	.small-offset {
+
+		@include media-breakpoint-up(lg) {
+
+			margin-top: -7rem;
+
+		}// @include media-breakpoint-up(lg)
+
+	}// .small-offset
+
+	.large-offset {
+
+		@include media-breakpoint-up(lg) {
+
+			margin-top: -11.5rem;
+
+		}// @include media-breakpoint-up(lg)
+
+	}// .large-offset
+
+}// body

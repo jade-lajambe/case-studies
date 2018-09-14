@@ -1,0 +1,52 @@
+html {
+
+	font-size: 62.5%;
+
+	body {
+
+		font-family: $base-font-family;
+		font-size: $base-font-size;
+		background-color: $grey-color;
+
+		ul {
+
+			margin: 0 0 0 0.5rem;
+			padding: 0 0 0 1.3rem;
+
+		}// ul
+
+		img {
+
+			width: 100%;
+			max-width: 100%;
+
+		}// img
+
+		button {
+
+			&:focus {
+
+				outline: none;
+
+			}
+
+		}
+
+		// Bootstrap4 removed no gutters utility. Adding it back
+		.row.no-gutter {
+
+			margin-right: 0;
+			margin-left: 0;
+
+			& > [class^="col-"],
+			& > [class*=" col-"] {
+
+				padding-right: 0;
+				padding-left: 0;
+
+			}
+		}
+
+	}// body
+
+}// html

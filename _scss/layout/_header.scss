@@ -1,0 +1,279 @@
+.site-header {
+
+  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $header-height;
+  width: 100%;
+  z-index: 3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  pointer-events: none;
+  @include transition(top .2s ease-in);
+
+  &.js-site-header-scrolling {
+
+    top: -$header-height; /* Height of the header */
+    height: 0;
+
+    &.menu-is-open {
+
+      top: 0;
+      height: $header-height;
+
+    }
+
+  }// .js-site-header-scrolling
+
+  &.is-fixed {
+
+    &.menu-is-open {
+
+      top: 0;
+      @include transform(none);
+
+    }
+
+  }
+
+  .header-inner {
+
+    position: relative;
+    top: 0;
+    height: 100%;
+
+    .logo {
+
+      display: block;
+      @include center(false, true);
+      bottom: auto;
+      pointer-events: all;
+
+      img {
+
+        display: block;
+
+      }// img
+
+    }// .logo
+
+  }// .header-inner
+
+  @include media-breakpoint-up(md) {
+
+    @include transition(all 0.2s);
+    /* Force Hardware Acceleration in WebKit */
+    @include transform(translate3d(0, 0, 0));
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  
+    &.is-fixed {
+
+      /* when the user scrolls down, we hide the header right above the viewport */
+      background: rgba(0,0,0,0.3);
+      position: fixed;
+      top: -$header-height;
+      @include transition(transform 0.2s);
+    
+    }// .site-header.is-fixed
+
+    &.is-visible {
+
+      /* if the user changes the scrolling direction, we show the header */
+      @include transform(translate3d(0, 100%, 0));
+    
+    }// .site-header.is-visible
+
+    &.menu-is-open {
+
+      background-color: transparent;
+    
+    }// .site-header.menu-is-open
+
+  }// @include media-breakpoint-up(md)
+
+}// .site-header
+
+.primary-nav-trigger {
+
+  @include center(false, true);
+  width: 50px;
+  height: 50px;
+  right: 15px;
+  background-color: transparent;
+  text-align: center;
+  pointer-events: all;
+
+  .menu-text {
+
+    color: $grey-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* hide the text on small devices */
+    display: inline-block;
+
+  }// .menu-text
+
+  .menu-icon {
+
+    display: inline-block;
+    @include center(true, false);
+    width: 18px;
+    height: 2px;
+    bottom: 10px;
+    background-color: $grey-color;
+    @include transition(background-color 0.2s);
+
+    &:before,
+    &:after {
+
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: $grey-color;
+      right: 0;
+      @include transition(transform .2s, top .2s, background-color 0s);     
+
+    }// .menu-icon:before, .menu-icon:after
+
+    &:before {
+
+      top: -5px;
+
+    }// .menu-icon:before
+
+    &:after {
+
+      top: 5px;
+
+    }// .menu-icon:after
+
+    &.is-clicked {
+
+      background-color: rgba(255, 255, 255, 0);
+
+      &:before,
+      &:after {
+
+        background-color: $grey-color;
+
+      }// .menu-icon.is-clicked:before, .menu-icon.is-clicked:after
+
+      &:before {
+
+        top: 0;
+        @include transform(rotate(135deg));
+
+      }// .menu-icon.is-clicked:before
+
+      &:after {
+
+        top: 0;
+        @include transform(rotate(225deg));
+
+      }// .menu-icon.is-clicked:after
+
+    }// .menu-icon.is-clicked
+
+  }// .menu-icon
+
+}// .primary-nav-trigger
+
+.primary-nav {
+
+  /* by default it's hidden - on top of the viewport */
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: rgba(35,50,55,.98);
+  z-index: 2;
+  text-align: center;
+  padding: $header-height 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: auto;
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+  @include transform(translateY(-100%));
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+  li {
+
+    a {
+
+      font-size: 1.6rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      text-transform: uppercase;
+      color: $grey-color;
+      display: inline-block;
+      padding: 1rem;
+      font-weight: 700;
+      @include transition(all 0.2s);
+
+      &:focus,
+      &:hover,
+      &:active {
+
+        text-decoration: none;
+
+      }// :focus, :hover, :active
+
+      &:not(.active) {
+
+        opacity: .7;
+
+        &:focus,
+        &:hover,
+        &:active {
+
+          opacity: 1;
+
+        }// :focus, :hover, :active
+
+      }
+
+      @include media-breakpoint-up(sm) {
+ 
+        padding: 0 1rem;
+
+      }// @include media-breakpoint-up(sm)
+
+    }// a
+
+    @include media-breakpoint-up(sm) {
+
+      line-height: $header-height;
+      display: inline-block;
+
+    }// @include media-breakpoint-up(sm)
+
+  }// li
+
+  &.is-visible {
+
+    @include transform(translateY(0));
+
+  }// .primary-nav.is-visible
+
+  @include media-breakpoint-up(sm) {
+
+      background: rgba(0,0,0,0.3);
+      padding: 0;
+      margin: 0;
+      height: $header-height;
+
+  }// @include media-breakpoint-up(sm) 
+
+}// .primary-nav
