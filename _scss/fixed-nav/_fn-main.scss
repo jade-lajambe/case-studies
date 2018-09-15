@@ -1,10 +1,7 @@
-@import 'bourbon'; // http://bourbon.io/
-
-@import 'fn-variables'; // colors, fonts etc...
-
-@import 'fn-mixins'; // custom mixins
-
-@import 'fn-layout'; // responsive grid and media queries
+@import 'bourbon';
+@import 'fn-variables';
+@import 'fn-mixins';
+@import 'fn-layout'; 
 
 /* -------------------------------- 
 
@@ -18,7 +15,7 @@ html * {
 }
 
 *, *:after, *:before {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 body {
@@ -120,7 +117,7 @@ Main components
 	bottom: 20px;
 	width: 38px;
 	height: 44px;
-	background: url('../img/cd-arrow-bottom.svg') no-repeat center center;
+	background: url('../../assets/img/cd-arrow-bottom.svg') no-repeat center center;
 }
 
 /* No Touch devices */
@@ -144,7 +141,7 @@ Main components
 		@include clearfix;
 
 		/* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
-		@include backface-visibility(hidden);
+		backface-visibility: hidden;
 		
 		span {
 			float: right;
@@ -176,7 +173,7 @@ Main components
 		-webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
 		-moz-transition: -moz-transform 0.2s, background-color 0.5s;
 		transition: transform 0.2s, background-color 0.5s;
-		@include transform-origin(50% 50%);	
+		transform-origin: 50% 50%;	
 	}
 
 	.cd-label {
@@ -190,7 +187,7 @@ Main components
 		-moz-transition: -moz-transform 0.2s, opacity 0.2s;
 		transition: transform 0.2s, opacity 0.2s;
 		opacity: 0;
-		@include transform-origin(100% 50%);
+		transform-origin: 100% 50%;
 	}
 }
 
@@ -245,10 +242,10 @@ Main components
 	max-height: 90%;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-	@include transform-origin(right bottom);
+	transform-origin: right bottom;
 	@include transform(scale(0));
-	@include transition-property(transform);
-	@include transition-duration(.2s);
+	transition-property: transform;
+	transition-duration: .2s;
 	@include border-radius;
 	background-color: rgba($color-4, .9);
 
