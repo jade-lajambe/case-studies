@@ -45,7 +45,6 @@ img {
 Modules - reusable parts of our design
 
 -------------------------------- */
-
 .cd-img-replace { /* replace text with a background-image */
 	display: inline-block;
 	overflow: hidden;
@@ -58,7 +57,6 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
-
 .cd-section {
 	min-height: 100%;
 	position: relative;
@@ -68,7 +66,7 @@ Main components
 		background-color: $color-1;
 
 		p {
-			color: lighten($color-1, 30%);
+			color: $color-4;
 		}
 	}
 
@@ -78,14 +76,6 @@ Main components
 		p {
 			color: lighten($color-2, 30%);
 		}
-	}
-
-	h1, p {
-		position: absolute;
-		@include center;
-		width: 90%;
-		max-width: $M;
-		text-align: center;
 	}
 
 	h1 {
