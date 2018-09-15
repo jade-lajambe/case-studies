@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="99px" viewBox="0 0 74 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>bulb-61</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="wireframes" transform="translate(-1664.000000, -1072.000000)" stroke="#13AAE5" stroke-width="4">
+            <g id="process" transform="translate(0.000000, 667.000000)">
+                <g id="Group-3" transform="translate(1650.000000, 407.000000)">
+                    <g id="bulb-61" transform="translate(16.000000, 0.000000)">
+                        <path d="M70,35.2 C70,15.76 54.3295455,0 35,0 C15.6704545,0 0,15.76 0,35.2 C0,48.872 7.76681818,60.6976 19.0909091,66.5264 L19.0909091,84.8 L50.9090909,84.8 L50.9090909,66.5264 C62.2331818,60.6976 70,48.872 70,35.2 Z" id="Shape"></path>
+                        <path d="M15.9090909,44.8 C15.9090909,41.2656 18.7584091,38.4 22.2727273,38.4 C25.7870455,38.4 28.6363636,41.2656 28.6363636,44.8 C28.6363636,45.9664 28.6363636,51.2 28.6363636,51.2 C28.6363636,51.2 24.6272727,51.2 22.2727273,51.2 C18.7584091,51.2 15.9090909,48.3344 15.9090909,44.8 Z" id="Shape"></path>
+                        <path d="M28.6363636,51.2 L28.6363636,75.2" id="Shape"></path>
+                        <path d="M54.0909091,44.8 C54.0909091,41.2656 51.2415909,38.4 47.7272727,38.4 C44.2129545,38.4 41.3636364,41.2656 41.3636364,44.8 C41.3636364,45.9664 41.3636364,51.2 41.3636364,51.2 C41.3636364,51.2 45.3727273,51.2 47.7272727,51.2 C51.2415909,51.2 54.0909091,48.3344 54.0909091,44.8 Z" id="Shape"></path>
+                        <path d="M41.3636364,51.2 L41.3636364,75.2" id="Shape"></path>
+                        <path d="M28.6363636,51.2 L41.3636364,51.2" id="Shape"></path>
+                        <path d="M19.0909091,94.4 L50.9090909,94.4" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
