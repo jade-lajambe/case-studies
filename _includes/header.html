@@ -10,7 +10,7 @@
       </a> <!--// .primary-nav-trigger -->
   </div><!--// .header-inner.container -->
 </header><!--// .site-header -->
-<nav>
+<!--<nav>
   <ul class="primary-nav">
     {% assign pages = site.pages | sort:"order"  %}
     {% for p in pages %}
@@ -20,3 +20,43 @@
     {% endfor %}
   </ul>
 </nav><!--// nav -->
+<nav id="cd-vertical-nav">
+  <ul>
+    <li>
+      <a href="#section1" data-number="1">
+        <span class="cd-dot"></span>
+        <span class="cd-label">Intro</span>
+      </a>
+    </li>
+    <li>
+      <a href="#section2" data-number="2">
+        <span class="cd-dot"></span>
+        <span class="cd-label">About</span>
+      </a>
+    </li>
+    <li>
+      <a href="#section3" data-number="3">
+        <span class="cd-dot"></span>
+        <span class="cd-label">Features</span>
+      </a>
+    </li>
+    <li>
+      <a href="#section4" data-number="4">
+        <span class="cd-dot"></span>
+        <span class="cd-label">Portfolio</span>
+      </a>
+    </li>
+    <li>
+      <a href="#section5" data-number="5">
+        <span class="cd-dot"></span>
+        <span class="cd-label">Pricing</span>
+      </a>
+    </li>
+    <li>
+      <a href="#section6" data-number="6">
+        <span class="cd-dot"></span>
+        <span class="cd-label">Contact</span>
+      </a>
+    </li>
+  </ul>
+</nav>

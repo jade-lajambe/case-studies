@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>grid-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Web-Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="grid-icon" fill="#233237">
+            <rect id="Rectangle-path" x="0" y="0" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="0" y="11.7647059" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="11.6363636" y="0" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="11.6363636" y="11.7647059" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="23.2727273" y="0" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="23.2727273" y="11.7647059" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="0" y="23.5294118" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="11.6363636" y="23.5294118" width="8.26752698" height="8.02436442"></rect>
+            <rect id="Rectangle-path" x="23.2727273" y="23.5294118" width="8.26752698" height="8.02436442"></rect>
+        </g>
+    </g>
+</svg>

@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Evan LaJambe Portfolio
-email: eclajambe@gmail.com
+title: Jade LaJambe Case Studies
+email: jambeedesigns@gmail.com
 description: "UI/Web Designer and Front-End Web Developer living in Seattle, WA."
-url: "http://www.evanlajambe.com"
+url: "https://jade-lajambe.github.io/case-studies/"
 google_analytics: UA-39588480-6
 
 # Build settings
