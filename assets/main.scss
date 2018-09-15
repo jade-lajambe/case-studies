@@ -40,24 +40,9 @@ $header-height: 8rem;
 @import "helpers/helpers";
 @import "helpers/animations";
 
-// import components
-@import "components/tooltip";
-@import "components/form";
-@import "components/button";
-
 // import layouts
 @import "layout/header";
-@import "layout/page-intro";
-@import "layout/sidebar";
 @import "layout/main";
-@import "layout/footer";
-
-// import pages
-@import "pages/home";
-@import "pages/about";
-@import "pages/archive";
-@import "pages/project";
-@import "pages/contact";
 
 // import fixed nav
 @import "fixed-nav/fn-main";

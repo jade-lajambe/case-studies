@@ -29,10 +29,10 @@ gems:
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
 
 # Build Collections
-collections:
-  portfolio:
-    output: true
-    permalink: /portfolio/:path/
+#collections:
+#  portfolio:
+#    output: true
+#    permalink: /portfolio/:path/
 
 # Assets
 #
