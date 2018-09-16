@@ -25,6 +25,40 @@ h1, p, li {
 	font-weight: 400;
 	
 }
+ul.content-list {
+
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+
+	li {
+
+		list-style-type: none;
+		position: relative;
+		padding-left: 1em;
+		margin-bottom: 1em;
+
+		&:before { 
+			content: '';
+			position: absolute;
+			top: 7px;
+			left: 0;
+			display: inline-block;
+			height: 12px;
+			width: 8px;
+			background-image: url(../../assets/img/ui/list-arrow.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+		}		
+
+		&:last-of-type {
+
+			margin-bottom: 0;
+
+		}
+
+	}
+
+}
 a {
 	color: $color-1;
 	text-decoration: none;
