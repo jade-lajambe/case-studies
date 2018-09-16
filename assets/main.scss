@@ -4,6 +4,8 @@
 
 @charset "utf-8";
 
+$white: #fff;
+
 // Our variables
 $base-font-family:    "Open Sans", Helvetica, Arial, sans-serif;
 $base-font-size:      1.6rem;
@@ -12,18 +14,17 @@ $base-letter-spacing: 0.05rem;
 $small-font-size:     $base-font-size * 0.875;
 $base-line-height:    1.8rem;
 
-$color-1: #3cc47c; // Grass
-$color-2: #233237; // Deep Blue
-$color-3: #ecf0f1; // Porcelain
-$color-4: #ffffff; // White
-$color-5: #e94b35; // Cinnabar
-$color-6: #b52b4a; // Berry
+$color-1: #13AAE5; // Light blue
+$color-2: #344455; // Dark blue (Headings)
+$color-3: #19293A; // Darkest Blue (Body)
 
-$grey-color:       #ecf0f1;
+$grey-color: #F3F4F7; // light grey
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$text-color: $color-2;
+$text-color: $color-3;
+$heading-color: $color-2;
+$link-color: $color-1;
 
 $header-height: 8rem;
 

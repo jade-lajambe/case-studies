@@ -1,5 +1,4 @@
 @import 'bourbon';
-@import 'fn-variables';
 @import 'fn-mixins';
 @import 'fn-layout'; 
 
@@ -18,23 +17,14 @@ html * {
 	box-sizing: border-box;
 }
 
-body {
-	font: {
-		family: $primary-font; // variables inside partials > _variables.scss
-	}
-	color: $color-1;
-	background-color: $color-4;
-}
-
 body, html {
 	height: 100%;
 }
-h1, p {
+h1, p, li {
 
-	font-weight: 600;
+	font-weight: 400;
 	
 }
-
 a {
 	color: $color-1;
 	text-decoration: none;
@@ -42,6 +32,51 @@ a {
 
 img {
 	max-width: 100%;
+}
+.bg-blue {
+	
+	background-color: $color-1;
+
+	h1, p {
+
+		color: $white;
+
+	}
+
+}
+
+.bg-grey {
+	
+	background-color: $grey-color;
+
+}
+
+.bg-white {
+	
+	background-color: $white;
+
+}
+
+.bg-white,
+.bg-grey {
+
+	h1 {
+		
+		color: $heading-color;
+
+	}
+	p {
+
+		color: $body-color;
+
+	}
+
+}	
+
+.section-sep {
+
+	height: 16px;
+
 }
 
 /* -------------------------------- 
@@ -62,7 +97,7 @@ Main components
 
 -------------------------------- */
 .cd-section {
-	min-height: 100vh;
+	/*min-height: 100vh;*/
 	position: relative;
     perspective: 2px;
 
@@ -70,7 +105,7 @@ Main components
 
 		&.row-primary {
 
-			height: 100vh;
+			/*height: 100vh;*/
 
 		}
 
@@ -106,46 +141,6 @@ Main components
 		}
 
 	}
-
-	&.bg-blue {
-		
-		background-color: $color-1;
-
-		h1, p {
-
-			color: $white;
-
-		}
-
-	}
-
-	&.bg-grey {
-		
-		background-color: $color-2;
-
-	}
-
-	&.bg-white {
-		
-		background-color: $white;
-
-	}
-
-	&.bg-white,
-	&.bg-grey {
-
-		h1 {
-			
-			color: $heading-color-dark;
-
-		}
-		p {
-
-			color: $body-color-dark;
-
-		}
-
-	}	
 
 }
 
@@ -196,7 +191,7 @@ Main components
 		}
 
 		&.is-selected .cd-dot {
-			background-color: $color-4;
+			background-color: $white;
 		}
 	} 
 
@@ -218,7 +213,7 @@ Main components
 		position: relative;
 		margin-right: 10px;
 		padding: .4em .5em;
-		color: $color-4;
+		color: $white;
 
 		-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
 		-moz-transition: -moz-transform 0.2s, opacity 0.2s;
@@ -239,7 +234,7 @@ Main components
 	height: 44px;
 	width: 44px;
 	@include border-radius;
-	background: rgba($color-4, .9);
+	background: rgba($white, .9);
 
 	span {
 		position: absolute;
@@ -284,7 +279,7 @@ Main components
 	transition-property: transform;
 	transition-duration: .2s;
 	@include border-radius;
-	background-color: rgba($color-4, .9);
+	background-color: rgba($white, .9);
 
 	a {
 		display: block;
