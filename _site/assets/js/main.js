@@ -24,229 +24,50 @@ main.Common = {
 		if ( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
 
 		}
-		main.Common.primaryNav();
-		main.Common.initMixItUp();
-		main.Common.sidebarScroll();
-		main.Common.formInteractions();
-		main.Common.formSubmit();
+		main.Common.sectionKeyNav();
 	},
 
-	// Full-screen Primary Nav overlay, inspired by Cody House (http://codyhouse.co)
-	primaryNav: function () {
-
-		jQuery(document).ready(function($){
-
-			var MQL = 1170;
-
-			//primary navigation slide-in effect
-			if($(window).width() > MQL) {
-				var headerHeight = $('.site-header').height();
-				$(window).on('scroll',
-				{
-			        previousTop: 0
-			    }, 
-			    function () {
-				    var currentTop = $(window).scrollTop();
-				    //check if user is scrolling up
-				    if (currentTop < this.previousTop ) {
-				    	//if scrolling up...
-				    	/*if (currentTop > 0 && $('.site-header').hasClass('is-fixed')) {
-				    		$('.site-header').addClass('is-visible');
-				    	} else {
-				    		$('.site-header').removeClass('is-visible is-fixed');
-				    	}*/
-				    } else {
-				    	//if scrolling down...
-				    	/*$('.site-header').removeClass('is-visible');
-				    	if( currentTop > headerHeight && !$('.site-header').hasClass('is-fixed')) $('.site-header').addClass('is-fixed');*/
-				    }
-				    this.previousTop = currentTop;
-				});
-			}
-
-			//open/close primary navigation
-			$('.primary-nav-trigger').on('click', function(){
-				$('.menu-icon').toggleClass('is-clicked'); 
-				$('.site-header').toggleClass('menu-is-open');
-				
-				//in firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
-				if( $('.primary-nav').hasClass('is-visible') ) {
-					$('.primary-nav').removeClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
-						$('body').removeClass('overflow-hidden');
-					});
-				} else {
-					$('.primary-nav').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
-						$('body').addClass('overflow-hidden');
-					});	
-				}
-			});
-		});
-
-	},// primaryNav
-
-	// Full-screen Primary Nav overlay, inspired by Cody House (http://codyhouse.co)
-	initMixItUp: function () {
-
-		if ( $('#grid-container').length ) {
-			$(function(){
-  				$('#grid-container').mixItUp();
-			});
-		}
-
-	},// initMixItUp
-
-	// Sidebar follows users down the page
-	sidebarScroll: function() {
-
-		if ( $('#sidebar.sticky-sidebar').length ) {
-			
-			var sidebar = $('.sidebar-inner');
-			var top 	= sidebar.offset().top - parseFloat(sidebar.css('margin-top'));
-
-			$(window).scroll(function (event) {
-				var y = $(this).scrollTop();
-				if (y >= top) {
-					sidebar.addClass('fixed');
-				} else {
-					sidebar.removeClass('fixed');
-				}
-			});
-			
-		}
-
-	},// sidebarScroll
-
-	// Get labels out of the way once user inputs data
-	formInteractions: function() {
-
-		if ( $('#cf-form').length ) {
-
-			if( $('.floating-labels').length > 0 ) floatLabels();
-
-			function floatLabels() {
-				var inputFields = $('.floating-labels .cf-label').next();
-				inputFields.each(function(){
-					var singleInput = $(this);
-					//check if user is filling one of the form fields 
-					checkVal(singleInput);
-					singleInput.on('change keyup', function(){
-						checkVal(singleInput);	
-					});
-				});
-			}
-
-			function checkVal(inputField) {
-				( inputField.val() == '' ) ? inputField.prev('.cf-label').removeClass('float') : inputField.prev('.cf-label').addClass('float');
-			}
-
-		}
-	
-	},// formInteractions
-
-
-	// Submit contact form w/ Ajax
-	formSubmit: function() {
-
-		var form = $('#cf-form');
-
-		// Check if form exists
-		if (form.length) {
-
-			// Init jQuery Validate function
-			$(form).validate();
-
-			// Submit form
-			$(form).submit(function(e) {
-
-				if ( $(this).valid() ) { 
-
-					// obfuscate email
-					var string1 = "eclajambe",
-						string2 = "@",
-						string3 = "gmail.com",
-						string4 = string1 + string2 + string3;
-
-					// gather input data
-					var name    = $('#cf-name'),
-						email   = $('#cf-email'),
-						message = $('#cf-message');
-
-					if(name.val() == "" || email.val() == "" || message.val() == "") {
-						//$('.error-message').fadeToggle(400);
-						return false;
-					} else {
-						$.ajax({
-							method: 'POST',
-							url: '//formspree.io/' + string4,
-							data: $(form).serialize(),
-							datatype: 'json'
-						});
-						e.preventDefault();
-						$(this).get(0).reset();
-						$('.success-message').fadeToggle(400);
-					}
-			
-				}// validation check
-
-				return false;
-
-			});// form.submit
-
-		}// form.length
-
-	},// formSubmit
-
-	fixedNav: function() {
-
-		var contentSections = $('.cd-section'),
-			navigationItems = $('#cd-vertical-nav a');
-
-		updateNavigation();
-		$(window).on('scroll', function(){
-			updateNavigation();
-		});
-
-		//smooth scroll to the section
-		navigationItems.on('click', function(event){
-	        event.preventDefault();
-	        smoothScroll($(this.hash));
-	    });
-	    //smooth scroll to second section
-	    $('.cd-scroll-down').on('click', function(event){
-	        event.preventDefault();
-	        smoothScroll($(this.hash));
-	    });
-
-	    //open-close navigation on touch devices
-	    $('.touch .cd-nav-trigger').on('click', function(){
-	    	$('.touch #cd-vertical-nav').toggleClass('open');
-	  
-	    });
-	    //close navigation on touch devices when selectin an elemnt from the list
-	    $('.touch #cd-vertical-nav a').on('click', function(){
-	    	$('.touch #cd-vertical-nav').removeClass('open');
-	    });
-
-		function updateNavigation() {
-			contentSections.each(function(){
-				$this = $(this);
-				var activeSection = $('#cd-vertical-nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-				if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
-					navigationItems.eq(activeSection).addClass('is-selected');
-				}else {
-					navigationItems.eq(activeSection).removeClass('is-selected');
-				}
-			});
-		}
-
-		function smoothScroll(target) {
-	        $('body,html').animate(
-	        	{'scrollTop':target.offset().top},
-	        	600
-	        );
-		}
+	// Keyboard navigation between sections
+	sectionKeyNav: function() {
 		
-	}// fixedNav
+		var sectionTops = [];
+		
+		$('.cd-section').each(function(i, el){
+			sectionTops.push(this.offsetTop);
+		});
+
+		$(document).keydown(function(e) {
+			
+			var dir 	  = false,
+				targetTop = -1;
+
+			switch (e.keyCode) {
+				case 38:
+					dir = -1;
+				break;                
+				case 40:
+					dir = 1;
+				break;
+			}
+
+			if (dir) {
+				e.preventDefault();
+				winTop = window.scrollY;
+				$.each(sectionTops, function(i, v){
+					if ((dir == 1 && winTop < v && targetTop < 0) ||
+						(dir == -1 && winTop > v)) {
+						targetTop = v;
+					}
+				});
+
+				if (targetTop >= 0) {
+					$('html, body').animate({scrollTop: targetTop}, 500);
+				}
+
+			}
+
+		});	
+	}
 
 };
 
