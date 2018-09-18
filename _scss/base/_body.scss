@@ -8,28 +8,11 @@ html {
 		font-size: $base-font-size;
 		background-color: $grey-color;
 
-		ul {
-
-			margin: 0 0 0 0.5rem;
-			padding: 0 0 0 1.3rem;
-
-		}// ul
-
 		img {
 
 			max-width: 100%;
 
 		}// img
-
-		button {
-
-			&:focus {
-
-				outline: none;
-
-			}
-
-		}
 
 	}// body
 

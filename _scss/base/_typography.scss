@@ -15,6 +15,7 @@ ul.content-list {
 		margin-bottom: 1em;
 
 		&:before { 
+			
 			content: '';
 			position: absolute;
 			top: 7px;
@@ -25,14 +26,15 @@ ul.content-list {
 			background-image: url(img/ui/list-arrow.svg);
 			background-size: contain;
 			background-repeat: no-repeat;
-		}		
+
+		}// &:before
 
 		&:last-of-type {
 
 			margin-bottom: 0;
 
-		}
+		}// &:last-of-type
 
-	}
+	}// li
 
-}
+}// ul
