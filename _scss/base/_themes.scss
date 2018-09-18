@@ -1,0 +1,67 @@
+section {
+
+	position: relative;
+    perspective: 2px;
+
+	&.parallax {
+
+		&:after {
+
+			content: " ";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			transform: translateZ(-1px) scale(1.5);
+			background-size: 100%;
+			z-index: -1;
+
+		}
+
+		&.bg-1:after {
+
+			background-image: url('img/ui/world-map-background.svg');
+			opacity: 0.09;
+
+		}
+
+	}
+	&.bg-blue {
+		
+		background-color: $color-1;
+
+		h1, p {
+
+			color: $white;
+
+		}
+
+	}
+	&.bg-grey {
+		
+		background-color: $grey-color;
+
+	}
+	&.bg-white {
+		
+		background-color: $white;
+
+	}
+	&.bg-white,
+	&.bg-grey {
+
+		h1 {
+			
+			color: $heading-color;
+
+		}
+		p {
+
+			color: $body-color;
+
+		}
+
+	}		
+
+}

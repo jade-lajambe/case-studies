@@ -32,7 +32,7 @@ main.Common = {
 		
 		var sectionTops = [];
 		
-		$('.cd-section').each(function(i, el){
+		$('section').each(function(i, el){
 			sectionTops.push(this.offsetTop);
 		});
 

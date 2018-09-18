@@ -31,21 +31,6 @@ html {
 
 		}
 
-		// Bootstrap4 removed no gutters utility. Adding it back
-		.row.no-gutter {
-
-			margin-right: 0;
-			margin-left: 0;
-
-			& > [class^="col-"],
-			& > [class*=" col-"] {
-
-				padding-right: 0;
-				padding-left: 0;
-
-			}
-		}
-
 	}// body
 
 }// html

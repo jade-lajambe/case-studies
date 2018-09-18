@@ -1,83 +1,40 @@
 .wf-loading h1 { visibility: hidden; }
 .wf-active h1, 
 .wf-inactive h1 { visibility: visible; font-family: 'Open Sans'; }
+h1, p, li {
+	font-weight: 400;
+}
+ul.content-list {
 
-a {
+	margin-left: 0 !important;
+	padding-left: 0 !important;
 
-	color: $color-1;
+	li {
 
-	&:focus,
-	&:hover,
-	&:active {
+		list-style-type: none;
+		position: relative;
+		padding-left: 1em;
+		margin-bottom: 1em;
 
-		text-decoration: none;
-		color: darken($color-1,15%);
-
-	}
-
-	&.dark-link {
-
-		color: $color-2;
-
-		&:focus,
-		&:hover,
-		&:active {
-
-			text-decoration: none;
-			color: darken($color-2,15%);
-
+		&:before { 
+			content: '';
+			position: absolute;
+			top: 7px;
+			left: 0;
+			display: inline-block;
+			height: 12px;
+			width: 8px;
+			background-image: url(img/ui/list-arrow.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
 		}		
+
+		&:last-of-type {
+
+			margin-bottom: 0;
+
+		}
 
 	}
 
 }
-
-h1 {
-
-	font-size: 2.6rem;
-	line-height: 3rem;
-
-	@include media-breakpoint-up(sm) {
-
-		font-size: 3rem;
-		line-height: 4rem;		
-
-	}
-
-}// h1
-
-h2 {
-
-	font-size: 2.3rem;
-	line-height: 2.7rem;
-	margin-bottom: 2rem;
-	margin-top: 3rem;
-
-}// h2
-
-h3 {
-
-	font-size: 1.9rem;
-	line-height: 2.2rem;
-	margin-bottom: 3rem;
-	margin-top: 3rem;
-
-}// h3
-
-h4 {
-
-	font-size: 1.25rem;
-	line-height: 1.4rem;
-	margin-bottom: 1.5rem;
-	margin-top: 1.5rem;
-
-	@include media-breakpoint-up(sm) {
-
-		font-size: 1.7rem;
-		line-height: 2rem;
-		margin-bottom: 2rem;
-		margin-top: 2rem;
-
-	}// @include media-breakpoint-up(sm)
-
-}// h4
