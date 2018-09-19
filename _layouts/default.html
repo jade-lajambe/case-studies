@@ -9,7 +9,6 @@ layout: compress
     <main class="page-content{% if page.main_offset %} offset {{ page.main_offset }}-offset{% endif %}" aria-label="Content">
       {{ content }}
     </main>
-    {% include footer.html %}
     {% if jekyll.environment == 'production' and site.google_analytics %}
       {% include google-analytics.html %}
     {% endif %}
